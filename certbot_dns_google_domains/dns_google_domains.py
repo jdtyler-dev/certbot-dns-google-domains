@@ -13,17 +13,18 @@
 # limitations under the License.
 
 import logging
-from typing import Callable, Optional, List
 from dataclasses import dataclass, field
-import requests
-from dataclasses_json import LetterCase, config, DataClassJsonMixin
-import zope.interface
+from typing import Callable, List, Optional
 
+import requests
+import zope.interface
 from certbot import errors, interfaces
 from certbot.plugins import dns_common
+from dataclasses_json import DataClassJsonMixin, LetterCase, config
 from publicsuffixlist import PublicSuffixList
 
 logger = logging.getLogger(__name__)
+
 
 @dataclass
 class AcmeTxtRecord(DataClassJsonMixin):
