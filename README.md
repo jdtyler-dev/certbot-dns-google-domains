@@ -5,7 +5,7 @@ A Certbot DNS Authenticator for [Google Domains](https://domains.google/).
 ## Named Arguments
 
 Option|Description
----|---|
+---|---
 `--authenticator dns-google-domains`|Select this authenticator plugin.
 `--dns-google-domains-credentials FILE`|Path to the INI file with credentials.
 `--dns-google-domains-propagation-seconds INT`|How long to wait for DNS changes to propagate. Default = 30s.
@@ -46,6 +46,7 @@ docker run \
 ```
 
 Notes:
+
 - `-v '/var/lib/letsencrypt:/var/lib/letsencrypt'` is where certbot by default outputs certificates, keys, and account information.
 - `-v '/etc/letsencrypt:/etc/letsencrypt'` is where certbot keeps its configuration.
 - `--authenticator 'dns-google-domains'` uses the dns-google-domains authenticator.
@@ -84,4 +85,3 @@ Google Domains does not provide an API to obtain the zone for a domain based on 
 1. If the `--dns-google-domains-zone` argument is specified, use that.
 2. If the credentials file specifies a zone, use that.
 3. Utilize the [Public Suffix List](https://publicsuffix.org/) to determine the zone.
-
